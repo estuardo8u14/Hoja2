@@ -6,11 +6,13 @@ public class Calculadora  implements iCalculadora, iPila<String>{
     public boolean tienealgo = true;
     ArrayList<String> ar = new ArrayList<>();
 
+    //Sumar dos numeros
     @Override
     public double sumar(double a, double b) {
         return a+b;
     }
 
+    //restar dos numeros
     @Override
     public double restar(double a, double b) {
         return a-b;
@@ -21,38 +23,39 @@ public class Calculadora  implements iCalculadora, iPila<String>{
         return a*b;
     }
 
+    //dividir dos numeros
     @Override
     public double dividir(double a, double b) {
         return a/b;
     }
 
-    //FALTA
+    //agregar
     @Override
     public void push(String item) {
-
+            ar.add(item);
+            tienealgo = false;
     }
 
-    //FALTA
+    //quitar
     @Override
     public String pop() {
-        return null;
+        return ar.remove(size()-1);
+
     }
 
-    //FALTA
     @Override
     public String peek() {
-        return null;
+        return ar.get(ar.size()-1);
     }
 
-    //FALTA
+
     @Override
     public boolean empty() {
-        return false;
+        return ar.size() == 0;
     }
 
-    //FAlTA
     @Override
     public int size() {
-        return 0;
+        return ar.size();
     }
 }
